@@ -1,0 +1,23 @@
+#!/bin/bash
+
+commits=(
+  "Add initial project notes"
+  "Improve README formatting"
+  "Add basic config settings"
+  "Refactor helper logic"
+  "Fix minor edge case bug"
+  "Improve code readability"
+  "Add inline documentation"
+  "Clean up unused variables"
+  "Improve error messages"
+  "Minor performance improvements"
+)
+
+mkdir -p src
+
+for msg in "${commits[@]}"
+do
+  echo "// $msg" >> src/main.js
+  git add .
+  git commit -m "$msg"
+done
